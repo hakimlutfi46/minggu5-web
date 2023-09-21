@@ -1,39 +1,104 @@
 <?php
-class Produk
+class ItemProduk
 {
-    protected $nama;
     protected $ukuran;
     protected $warna;
+    protected $nama;
 
-    public function __construct($nama, $ukuran, $warna)
+    public function Ukuran()
     {
-        $this->nama = $nama;
+        return $this->ukuran;
+    }
+
+    public function Warna()
+    {
+        return $this->warna;
+    }
+
+    public function Nama()
+    {
+        return $this->nama;
+    }
+}
+
+class Topi extends ItemProduk
+{
+    private $model;
+
+    public function __construct($ukuran, $warna, $nama, $model)
+    {
         $this->ukuran = $ukuran;
         $this->warna = $warna;
+        $this->nama = $nama;
+        $this->model = $model;
     }
 
-    public function getInfoProduk()
+    public function Model()
     {
-        return [
-            "Nama" => $this->nama,
-            "Ukuran" => $this->ukuran,
-            "Warna" => $this->warna,
-        ];
+        return $this->model;
     }
 }
 
-$produk1 = new Produk("Baju", "XL", "Hijau");
-$produk2 = new Produk("Celana", "L", "Merah");
-$produk3 = new Produk("Topi", "M", "Biru");
+class Celana extends ItemProduk
+{
+    private $tipe;
+    private $model;
 
-$produkArr = [$produk1, $produk2, $produk3];
-
-// Menggunakan foreach untuk menampilkan properti-produk dari semua objek
-foreach ($produkArr as $produk) {
-    echo "Produk: <br>";
-
-    foreach ($produk->getInfoProduk() as $key => $value) {
-        echo "$key : $value <br>";
+    public function __construct($ukuran, $warna, $nama, $tipe, $model)
+    {
+        $this->ukuran = $ukuran;
+        $this->warna = $warna;
+        $this->nama = $nama;
+        $this->tipe = $tipe;
+        $this->model = $model;
     }
-    echo "<br>";
+
+    public function Tipe()
+    {
+        return $this->tipe;
+    }
+
+    public function Model()
+    {
+        return $this->model;
+    }
 }
+
+class Baju extends ItemProduk
+{
+    private $tipe;
+
+    public function __construct($ukuran, $warna, $nama, $tipe)
+    {
+        $this->ukuran = $ukuran;
+        $this->warna = $warna;
+        $this->nama = $nama;
+        $this->tipe = $tipe;
+    }
+
+    public function Tipe()
+    {
+        return $this->tipe;
+    }
+}
+
+$topi = new Topi('XL', 'Merah', 'Topi Olahraga', 'Snapback');
+$celana = new Celana('L', 'Biru', 'Celana Jeans', 'Panjang', 'Regular Fit');
+$baju = new Baju('M', 'Putih', 'Kemeja', 'Lengan Panjang');
+
+// Mendapatkan informasi produk
+echo "Topi: " . $topi->Nama()
+    . ", Ukuran: " . $topi->Ukuran()
+    . ", Warna: " . $topi->Warna()
+    . ", Model: " . $topi->Model() . "<br>";
+
+echo "Celana: " . $celana->Nama()
+    . ", Ukuran: " . $celana->Ukuran()
+    . ", Warna: " . $celana->Warna()
+    . ", Tipe: " . $celana->Tipe()
+    . ", Model: " . $celana->Model() . "<br>";
+
+echo "Baju: " . $baju->Nama()
+    . ", Ukuran: " . $baju->Ukuran()
+    . ", Warna: " . $baju->Warna()
+    . ", Tipe: " . $baju->Tipe() . "<br>";
