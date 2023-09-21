@@ -25,7 +25,5 @@ class SportsCar extends Car
 
 // create an instance from the child class
 $sportCar = new SportsCar();
-
 $sportCar->setModel("Mercedes Bens");
-
 echo $sportCar->hello();

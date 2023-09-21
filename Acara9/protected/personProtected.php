@@ -19,6 +19,8 @@ $person1 = new Person();
 $person1->set_name("Lukman Hakim");
 // akses value dari properti name
 echo $person1->get_name();
+echo "<hr>";
 // properti tidak bisa dipanggil langsung, karena muncul error
 echo "Hai " . $person1->name = "Taufiq Rizaldi";
-echo "<hr>";
+
+// hampir sama dengan private. bedanya hanya protect saja

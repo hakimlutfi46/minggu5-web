@@ -1,5 +1,5 @@
 <?php
-// The parent class
+// The Parent Class
 class Car
 {
     protected $model;
@@ -11,7 +11,7 @@ class Car
         $this->model = $model;
     }
 }
-
+// The Child Class
 class SportCar extends Car
 {
     public function hello()
@@ -20,13 +20,11 @@ class SportCar extends Car
     }
 }
 
-
-
 $sportCar1 = new SportCar();
 $sportCar1->setModel("Rubicorn");
 $sportCar1->hello();
 
 // code dibawah ini tidak bisa diekesekusi karena variabel model tidak bisa digunakan langsung
-$avansa = new Car();
-$avansa->model = "Mobil keluarga";
-echo $avansa->model;
+// $avansa = new Car();
+// $avansa->model = "Mobil keluarga";
+// echo $avansa->model;

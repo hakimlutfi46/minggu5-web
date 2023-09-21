@@ -1,15 +1,15 @@
 <?php
-// The parent class
+// The Parent Class
 class Car
 {
-    public $model;
+    private $model;
 
     public function setModel($model)
     {
         $this->model = $model;
     }
 }
-
+// The Child Class
 class SportsCar extends car
 {
     public function hello()
@@ -20,5 +20,4 @@ class SportsCar extends car
 
 $sportCar1 = new SportsCar();
 $sportCar1->setModel("Lamborgini");
-
 $sportCar1->hello();

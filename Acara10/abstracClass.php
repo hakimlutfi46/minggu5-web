@@ -7,6 +7,5 @@ abstract class Car
     {
         $this->tankVolume = $volume;
     }
-
-    // abstract public function calculateNumOnFullTank();
+    // abstract public function calcNumMilesOnFullTank();
 }

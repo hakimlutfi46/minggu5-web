@@ -20,3 +20,6 @@ echo "Hai " . $person1->name = "Lukman Hakim";
 echo "<hr>";
 // method tidak bisa di akses secara langsung
 echo $person1->get_name();
+
+
+// pemanggilan tidak bisa diluar, harus di dalam class person
