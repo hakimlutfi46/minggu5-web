@@ -1,6 +1,5 @@
 <?php
 // Parent Class
-
 class Car
 {
     // private setter method
